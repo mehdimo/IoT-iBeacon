@@ -1,0 +1,20 @@
+{
+    "version": "3.3.0",
+    "name": "com.unarin.cordova.beacon",
+    "cordova_name": "Proximity Beacon Plugin",
+    "description": "Proximity Beacon Monitoring and Transmission Plugin (supporting iBeacons)",
+    "license": "Apache 2.0",
+    "repo": "https://github.com/petermetz/cordova-plugin-ibeacon.git",
+    "keywords": [
+        "cordova",
+        "ibeacon",
+        "beacon",
+        "bluetooth",
+        "le"
+    ],
+    "platforms": [
+        "ios",
+        "android"
+    ],
+    "engines": []
+}

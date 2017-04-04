@@ -1,0 +1,33 @@
+body
+.img{position:absolute;z-index:1;}
+
+#mapFloor{
+    display:inline-block;
+    width:480px; 
+    height:400px;
+    margin: 0 auto; 
+   // background: black; 
+    position:relative; 
+   // border:5px solid black; 
+    border-radius: 10px; 
+   // box-shadow: 0 5px 50px #333
+   }
+
+#canvas{
+    position:relative;
+    z-index:20;
+}
+
+/* @media (max-width : 1000px) {
+     #mapFloor{
+	    width:920px; 
+	    height:750px;
+     }
+   }
+
+  @media (max-width : 480px) {
+   #mapFloor{
+	    width:480px; 
+	    height:720px;
+   }
+  } */

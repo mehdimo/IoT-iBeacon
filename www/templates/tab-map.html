@@ -1,0 +1,45 @@
+<ion-view view-title="Navigation">
+  <ion-content class="padding">
+    <h3>WMU Waldo Library</h3>
+    <div>    
+    	GoTo: 
+    	<div class="list">
+    	<select name="destSelect" ng-model="pointB.tag" required ng-options="x.tag as x.name for x in destPoints" ng-change="drawPath()">
+    	</select>
+		</div>
+		
+    	<div id="mapFloor">
+             <img class="img" src="img/f1_layout.png" ng-src="{{image}}" style="width: 100%;"  >
+
+             <svg id="canvas" height="320" width="400">
+               <defs>
+			    <marker id="arrow" markerWidth="10" markerHeight="10" refx="0" refy="2" orient="auto" markerUnits="strokeWidth">
+			      <path d="M0,0 L0,4 L6,2 z" fill="#00f" />
+			    </marker>
+			    <marker id="CircleMark" markerWidth="8" markerHeight="8" refX="4" refY="4" markerUnits="userSpaceOnUse">
+			      <circle cx="4" cy="4" r="6" fill="deeppink"/>
+			    </marker>
+			   </defs>
+                <polygon points="{{x-8}},{{y}} {{x+8}},{{y}} {{x}},{{y-16}}" stroke="red" stroke-width="1" fill="yellow"
+                transform="rotate({{degree}} {{x}},{{y}})" />
+             
+                <circle cx="{{x}}" cy="{{y}}" r="8" stroke="red" stroke-width="2" fill="yellow">
+             		<animate
+                attributeType="XML"
+                attributeName="fill"
+                values="#ff0;#ff0;#f00;#fff"
+                dur="1.0s"
+                repeatCount="indefinite"/>
+             	</circle>
+             	<polyline visibility="{{pathVisibility}}" points="{{pathPoints}}" stroke-dasharray="5,5" style="fill:none;stroke:blue;stroke-width:3" marker-end="url(#arrow)"  />
+             	
+
+             	
+             	<polyline visibility="{{beaconsVisibility}}" points="{{beaconAllPoints}}" fill="none" stroke="none" stroke-width="2" marker-start="url(#CircleMark)" marker-mid="url(#CircleMark)" marker-end="url(#CircleMark)"  />
+             </svg>
+    	</div>	
+		<button id="button-1" class="button button-positive" ng-click="clearPath()" >Clear Path</button><span>     </span>
+		<button id="button-1" class="button button-positive" ng-click="showBeacons()" >{{showBeaconsBtnTxt}}</button>
+    </div>
+  </ion-content>
+</ion-view>
